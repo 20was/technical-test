@@ -1,12 +1,12 @@
 import { useLocation } from 'react-router-dom';
 
-export interface URLSearchParams {
+export interface URLSearchQueryParams {
   get(name: string): string | null;
 }
 
-const useQuery = (): URLSearchParams => {
+const useQueryParam = (): URLSearchQueryParams => {
   const location = useLocation();
   return new URLSearchParams(location.search);
 };
 
-export default useQuery;
+export default useQueryParam;
