@@ -1,46 +1,105 @@
-# Getting Started with Create React App
+# Simply Wall St Technical Exercise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this exercise we are looking for something that resembles `https://simplywall.st/stocks/`.
 
-## Available Scripts
+## Requirements:
 
-In the project directory, you can run:
+- Show a list of companies presented in a tile
+- Tile that shows the company name (Apple), unique symbol (NasdaqGS:APPL), snowflake score
+- Pagination (Pages, Infinite scrolling or Load more)
+- Filtering by country (refer to `https://simplywall.st/stocks` for supported country list)
+- Sorting by market cap (ASC and DESC direction)
+- Some form of basic styling (this is a front-end role). Feel free to use libraries (bootstrap, material-ui) as long as it doesn't conflict with the primary criteria.
 
-### `npm start`
+## The solution will be scored based on the following:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Primary criteria:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Component grouping (How you organise your components into logical groups)
+- Styling architecture (How you implement your styles)
+- Rendering performance (Check for performance bottlenecks)
+- Avoid overengineering (Simple and straightforward)
+- Readability (Simply Wall St engineers will be reviewing your solution)
 
-### `npm test`
+### Bonus criteria:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Data structures (How you store internal state)
+- Testing practices (https://codesandbox.io/docs/tests)
+- a11y
 
-### `npm run build`
+## API Documentation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For data fetching you will be using the following endpoint:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- POST https://api.simplywall.st/api/grid/filter?include=info,score
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The grid API requires the following payload
 
-### `npm run eject`
+```
+{
+  id: string;
+  no_result_if_limit: boolean;
+  offset: number;
+  size: number;
+  state: 'read'
+  rules: string;
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Most relevant properties for this exercise are `offset`, `size` and most importantly `rules`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The `rules` property requires a JSON serializable value.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Here's an example
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+[
+  ["order_by", "market_cap", "desc"],
+  ["primary_flag", "=", true],
+  ["grid_visible_flag", "=", true],
+  ["market_cap", "is_not_null"],
+  ["is_fund", "=", false],
+  [
+    "aor",
+    [
+      ["country_name", "in", ["au"]]
+    ]
+  ]
+]
+```
 
-## Learn More
+If we wanted to fetch 12 of companies in Canada sorted by Market Cap the payload would look like
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+{
+  id: 1,
+  no_result_if_limit: false,
+  offset: 0,
+  size: 12,
+  state: 'read',
+  rules: JSON.stringify([
+    ['order_by', 'market_cap', 'desc'],
+    ['grid_visible_flag', '=', true],
+    ['market_cap', 'is_not_null'],
+    ['primary_flag', '=', true],
+    ['is_fund', '=', false],
+    [
+      'aor',
+      [
+        ['country_name', 'in', ['ca']],
+      ],
+    ],
+  ]),
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Sample cURL
+
+```
+curl 'https://api.simplywall.st/api/grid/filter?include=info,score' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'accept: application/json' \
+  --data-raw '{"id":1,"no_result_if_limit":false,"offset":0,"size":12,"state":"read","rules":"[[\"order_by\",\"market_cap\",\"desc\"],[\"grid_visible_flag\",\"=\",true],[\"market_cap\",\"is_not_null\"],[\"primary_flag\",\"=\",true],[\"is_fund\",\"=\",false],[\"aor\",[[\"country_name\",\"in\",[\"ca\"]]]]]"}' \
+  --compressed
+```
