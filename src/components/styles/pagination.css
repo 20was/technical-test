@@ -1,0 +1,27 @@
+.pagination-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-button {
+  border-radius: 6px;
+  text-decoration: none;
+  vertical-align: top;
+  font-weight: normal;
+  font-size: 1.1rem;
+  line-height: 40px;
+  color: rgb(255, 255, 255);
+  height: 40px;
+  padding: 0 12px;
+  background-color: #2394df;
+}
+.pagination-button:hover {
+  background-color: #2085c9;
+  color: white;
+  cursor: pointer;
+}
+.disabled-button{
+  opacity: 0.3;
+  pointer-events: none;
+}
