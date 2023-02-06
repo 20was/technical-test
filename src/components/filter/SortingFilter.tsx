@@ -1,5 +1,5 @@
 import Select, {components, SingleValue} from "react-select";
-import {SORTING_OPTIONS, SortingTypes} from "../models/SortingTypes";
+import {SORTING_OPTIONS, SortingTypes} from "../../models/SortingTypes";
 import React from "react";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 const Option: React.FC = (props: any): JSX.Element => {
     return (
-        <div data-testid={`sorting-option-${props.value}`}>
+        <div>
             <components.Option {...props} children={props.children} />
         </div>
     );

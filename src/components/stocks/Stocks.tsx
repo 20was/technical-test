@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import {Stock} from "../models/Stock";
+import {Stock} from "../../models/Stock";
 import StockCard from "./StockCard";
-import '../Stock.css';
+import './styles/stocks.css'
 
 interface Props {
   stocks?: Stock[];

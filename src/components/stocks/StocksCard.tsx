@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import {SnowflakeScores} from "../models/SnowflakeScores";
-import {SNOWFLAKE_SCORES, SnowFlakeScore} from "../models/ScoreAreas";
-import '../Stock.css';
+import {SnowflakeScores} from "../../models/SnowflakeScores";
+import {SNOWFLAKE_SCORES, SnowFlakeScore} from "../../models/ScoreAreas";
 
 interface Props {
   scores: SnowflakeScores;

@@ -1,5 +1,6 @@
-import {MARKETS} from "../models/Markets";
+import {MARKETS} from "../../models/Markets";
 import Select, {components} from "react-select";
+import './styles/filter.css'
 import React from "react";
 
 
@@ -9,9 +10,7 @@ interface Props {
 
 const Option: React.FC = (props: any): JSX.Element => {
     return (
-        <a
-            href={`/${props.value}`}
-            data-testid={`selected-market-${props.value}`}>
+        <a href={`/${props.value}`} className="dropdown-link">
             <components.Option {...props} children={props.children}/>
         </a>
     );

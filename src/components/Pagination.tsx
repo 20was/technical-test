@@ -1,27 +1,20 @@
-import React, { FC } from 'react';
-import styled from 'styled-components';
-
-import IconAnchor from './IconAnchor';
-
-const Container = styled.div`
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
+import React, {FC} from 'react';
+import {URLPageLink} from "../hooks/useGetStockData";
+import './styles/pagination.css'
 
 interface Props {
-  prevPageLink?: string;
-  nextPageLink?: string;
+    previousLink: URLPageLink;
+    nextLink: URLPageLink;
 }
 
-const Pagination: FC<Props> = ({ prevPageLink, nextPageLink }): JSX.Element => {
-  return (
-    <Container>
-      <IconAnchor icon="left" href={prevPageLink} disabled={!prevPageLink} />
-      <IconAnchor icon="right" href={nextPageLink} disabled={!nextPageLink} />
-    </Container>
-  );
+const Pagination: FC<Props> = ({previousLink, nextLink}): JSX.Element => {
+
+    return (
+        <div className='pagination-wrapper' >
+            <a href={previousLink || ''} className={'pagination-button ' + (!previousLink ? 'disabled-button' : '')}>Previous</a>
+            <a href={nextLink || ''} className={'pagination-button ' + (!nextLink ? 'disabled-button' : '')}> Next</a>
+        </div>
+    );
 };
 
 export default Pagination;

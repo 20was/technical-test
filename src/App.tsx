@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import useGetStockData from "./hooks/useGetStockData";
+import MarketFilter from "./components/filter/MarketFilter";
+import SortingFilter from "./components/filter/SortingFilter";
+import {DEFAULT_SORTING_OPTIONS, SortingTypes} from "./models/SortingTypes";
+import useQueryParam from "./hooks/useQueryParam";
+import {useParams} from "react-router-dom";
+import Stocks from "./components/stocks/Stocks";
+import Pagination from "./components/Pagination";
+import {SingleValue} from "react-select";
+import Loader from "./components/Loader";
+import './App.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { market: selectedMarketValue } = useParams();
+    const query = useQueryParam();
+    const [sorting, setSorting] = useState<SingleValue<SortingTypes>>(
+        DEFAULT_SORTING_OPTIONS
+    );
+    const {data=[], loading, error, previousLink, nextLink} = useGetStockData(
+        selectedMarketValue,
+        sorting?.value,
+        query
+    ) || {};
+
+    const handleChangeSorting = (value: SingleValue<SortingTypes>) => {
+        setSorting(value);
+    };
+
+    return (
+        <div data-testid='app-wrapper'>
+            <div className="filter-container">
+                <div><MarketFilter selectedMarketValue={selectedMarketValue || ''}/></div>
+                <div><SortingFilter selectedSortingValue={sorting} onChange={handleChangeSorting}/></div>
+            </div>
+            {loading ?  <Loader/> : <Stocks stocks={data} />}
+            {error && <h4>API returned an error. Please give it a try after few minutes.</h4>}
+            <Pagination previousLink={previousLink} nextLink={nextLink}/>
+        </div>
+    );
 }
 
 export default App;
