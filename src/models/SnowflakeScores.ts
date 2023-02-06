@@ -5,4 +5,5 @@ export interface SnowflakeScores {
   past: number;
   future: number;
   total: number;
+  [key: string]: number;
 }

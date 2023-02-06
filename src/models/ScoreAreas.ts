@@ -1,11 +1,10 @@
-export interface ScoreArea {
+export interface SnowFlakeScore {
   key: string;
   name: string;
 }
 
-// separate key and display name to decouple
-// (e.g. DIVIDEND on the page uses income from the API response)
-export const SCORE_AREAS: ScoreArea[] = [
+
+export const SNOWFLAKE_SCORES: SnowFlakeScore[] = [
   { key: 'value', name: 'VALUE' },
   { key: 'income', name: 'DIVIDEND' },
   { key: 'health', name: 'HEALTH' },
