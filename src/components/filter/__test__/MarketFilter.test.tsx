@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, screen } from '@testing-library/react';
-import {MARKETS} from "../../models/Markets";
-import MarketFilter from "../filter/MarketFilter";
+import {MARKETS} from "../../../models/Markets";
+import MarketFilter from "../MarketFilter";
 
 describe('MarketFilter', () => {
     it('renders correctly', async() => {
