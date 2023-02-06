@@ -1,0 +1,85 @@
+.main-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.card {
+    word-wrap: break-word;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #deebfd;
+    margin-block-end: 1rem;
+    width: 23%;
+    padding: 10px;
+}
+.card-header{
+    border-block-end: 0;
+    border-start-start-radius: 7px !important;
+    border-start-end-radius: 7px !important;
+    border-color: #eae8f1;
+    padding-inline-start: 1.25rem;
+    padding-inline-end: 1.25rem;
+    padding-block-start: 1.25rem;
+    padding: 0.75rem 1.25rem;
+    margin-block-end: 0;
+    background-color: white;
+    padding-bottom: 0!important;
+}
+.card-title {
+    font-weight: 700;
+    color: #2394df;
+    font-size: 14px;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline-end: -0.75rem;
+    margin-inline-start: -0.75rem;
+}
+.badge{
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
+    border-radius: 0.125rem;
+    font-weight: bold;
+    background: #22c03c4d;
+    color: #28a26a ;
+}
+.col {
+    max-width: 100%;
+    width: 100%;
+    padding-inline-end: 0.75rem;
+    padding-inline-start: 0.75rem;
+    flex: 1 0 0%;
+}
+.text-center {
+    text-align: center !important;
+}
+.border-start {
+    border-color: #eae8f1 !important;
+    border-left: 1px solid #dee2e6!important;
+}
+.tx-12 {
+    font-size: 12px;
+}
+
+.fw-bold {
+    font-weight: bold !important;
+}
+/* Media query for tablet view */
+@media only screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+}
+
+/* Media query for mobile view */
+@media only screen and (max-width: 500px) {
+    .card {
+        width: 100%;
+    }
+}
