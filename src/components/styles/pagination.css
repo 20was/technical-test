@@ -1,4 +1,4 @@
-.pagination-wrapper{
+.pagination-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,11 +16,11 @@
   background-color: #363844;
 }
 .pagination-button:hover {
-  background-color: #4B4E5F;
+  background-color: #4b4e5f;
   color: #fff;
   cursor: pointer;
 }
-.disabled-button{
+.disabled-button {
   opacity: 0.3;
   pointer-events: none;
 }

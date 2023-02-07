@@ -12,7 +12,6 @@
       "@hooks/*": ["hooks/*"],
       "@models/*": ["models/*"],
       "@constants/*": ["constants/*"],
-      "@test/*": ["test/*"],
       "@mocks/*": ["mocks/*"],
       "@styles/*": ["styles/*"]
     }

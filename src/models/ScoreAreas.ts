@@ -3,7 +3,6 @@ export interface SnowFlakeScore {
   name: string;
 }
 
-
 export const SNOWFLAKE_SCORES: SnowFlakeScore[] = [
   { key: 'value', name: 'VALUE' },
   { key: 'income', name: 'DIVIDEND' },
