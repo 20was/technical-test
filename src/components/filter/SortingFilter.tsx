@@ -1,5 +1,5 @@
 import Select, {components, SingleValue} from "react-select";
-import {SORTING_OPTIONS, SortingTypes} from "../../models/SortingTypes";
+import {SORTING_OPTIONS, SortingTypes} from '@models/SortingTypes';
 import React from "react";
 
 interface Props {

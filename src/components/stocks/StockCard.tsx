@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Stock} from "../../models/Stock";
+import {Stock} from '@models/Stock';
 import StocksCard from "./StocksCard";
 
 interface Props {

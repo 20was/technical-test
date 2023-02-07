@@ -2,6 +2,10 @@
 
 In this exercise we are looking for something that resembles `https://simplywall.st/stocks/`.
 
+## Test Coverage
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f0e85e4f21fd0a88f64d/test_coverage)](https://codeclimate.com/github/20was/technical-test/test_coverage)
+
 ## Requirements:
 
 - Show a list of companies presented in a tile

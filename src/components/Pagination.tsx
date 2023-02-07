@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {URLPageLink} from "../hooks/useGetStockData";
+import {URLPageLink} from '@hooks/useGetStockData';
 import './styles/pagination.css'
 
 interface Props {

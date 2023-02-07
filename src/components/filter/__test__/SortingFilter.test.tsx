@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, screen, waitFor} from '@testing-library/react';
-import {SORTING_OPTIONS} from "../../../models/SortingTypes";
+import {SORTING_OPTIONS} from '@models/SortingTypes';
 import SortingFilter from "../SortingFilter";
 
 describe('SortingFilter', () => {

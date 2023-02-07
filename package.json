@@ -2,7 +2,7 @@
   "name": "simply-wall-st-grid-test",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
     "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -12,6 +12,9 @@
     "@types/node": "^16.18.11",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "prettier": "2.8.3"
+  },
+  "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0",
@@ -21,8 +24,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

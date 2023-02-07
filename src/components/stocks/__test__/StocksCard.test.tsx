@@ -1,8 +1,8 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
 import StocksCard from "../StocksCard";
-import {SNOWFLAKE_SCORES} from "../../../models/ScoreAreas";
-import {mockSnowflakeScores} from "../../../mocks/snowflakeScoreMock";
+import {SNOWFLAKE_SCORES} from '@models/ScoreAreas';
+import {mockSnowflakeScores} from '@mocks/snowflakeScoreMock';
 
 
 describe('ScoresCard component', () => {

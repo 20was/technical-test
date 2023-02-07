@@ -1,26 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "jsx": "react",
+    "target": "ES2015",
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "downlevelIteration": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  "include": [
-    "src"
-  ]
+    "paths": {
+      "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"],
+      "@models/*": ["models/*"],
+      "@constants/*": ["constants/*"],
+      "@test/*": ["test/*"],
+      "@mocks/*": ["mocks/*"],
+      "@styles/*": ["styles/*"]
+    }
+  }
 }

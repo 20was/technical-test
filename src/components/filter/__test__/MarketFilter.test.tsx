@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, screen } from '@testing-library/react';
-import {MARKETS} from "../../../models/Markets";
+import {MARKETS} from '@models/Markets';
 import MarketFilter from "../MarketFilter";
 
 describe('MarketFilter', () => {

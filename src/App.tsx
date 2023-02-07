@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import useGetStockData from "./hooks/useGetStockData";
 import MarketFilter from "./components/filter/MarketFilter";
 import SortingFilter from "./components/filter/SortingFilter";
-import {DEFAULT_SORTING_OPTIONS, SortingTypes} from "./models/SortingTypes";
+import {DEFAULT_SORTING_OPTIONS, SortingTypes} from '@models/SortingTypes';
 import useQueryParam from "./hooks/useQueryParam";
 import {useParams} from "react-router-dom";
 import Stocks from "./components/stocks/Stocks";
