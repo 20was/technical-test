@@ -7,18 +7,17 @@
 .pagination-button {
   border-radius: 6px;
   text-decoration: none;
-  vertical-align: top;
-  font-weight: normal;
+  width: 80px;
   font-size: 1.1rem;
+  text-align: center;
   line-height: 40px;
-  color: rgb(255, 255, 255);
-  height: 40px;
+  color: #fff;
   padding: 0 12px;
-  background-color: #2394df;
+  background-color: #363844;
 }
 .pagination-button:hover {
-  background-color: #2085c9;
-  color: white;
+  background-color: #4B4E5F;
+  color: #fff;
   cursor: pointer;
 }
 .disabled-button{

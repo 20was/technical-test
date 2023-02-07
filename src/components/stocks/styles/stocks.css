@@ -15,7 +15,7 @@
 .card-header{
     border-start-start-radius: 7px ;
     border-start-end-radius: 7px ;
-    padding: 10px 10px;
+    padding: 10px;
 
 }
 .card-title {
@@ -25,21 +25,19 @@
     font-size: 14px;
 }
 .card-body {
-
     color: #e8e2e2;
-    padding: 1.25rem;
+    padding: 8px
 }
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-inline-end: -0.75rem;
-    margin-inline-start: -0.75rem;
 }
 .badge{
     padding-inline-start: 0.25rem;
     padding-inline-end: 0.25rem;
     border-radius: 0.125rem;
     font-weight: bold;
+    text-transform: none;
     background: #F2CD5C;
     color: #243763 ;
 }
@@ -51,10 +49,10 @@
     flex: 1 0 0%;
 }
 .text-center {
-    text-align: center !important;
+    text-align: center;
 }
 .score-bg {
-    background-color: #151b24;
+    background-color: #151b2470;
     margin-bottom: 8px;
     flex: 1;
     padding-top:12px;
@@ -62,15 +60,13 @@
 .mg-right{
     margin-right: 8px;
 }
-{
 
-}
 .tx-12 {
     font-size: 12px;
 }
 
 .fw-bold {
-    font-weight: bold !important;
+    font-weight: bold;
 }
 /* Media query for tablet view */
 @media only screen and (max-width: 768px) {
