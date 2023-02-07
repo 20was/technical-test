@@ -6,33 +6,27 @@
 }
 .card {
     word-wrap: break-word;
-    background: #fff;
+    background: #1b222d;
     border-radius: 5px;
-    border: 1px solid #deebfd;
     margin-block-end: 1rem;
     width: 23%;
     padding: 10px;
 }
 .card-header{
-    border-block-end: 0;
-    border-start-start-radius: 7px !important;
-    border-start-end-radius: 7px !important;
-    border-color: #eae8f1;
-    padding-inline-start: 1.25rem;
-    padding-inline-end: 1.25rem;
-    padding-block-start: 1.25rem;
-    padding: 0.75rem 1.25rem;
-    margin-block-end: 0;
-    background-color: white;
-    padding-bottom: 0!important;
+    border-start-start-radius: 7px ;
+    border-start-end-radius: 7px ;
+    padding: 10px 10px;
+
 }
 .card-title {
     font-weight: 700;
-    color: #2394df;
+    color: #e8e2e2;
+    text-transform: uppercase;
     font-size: 14px;
 }
 .card-body {
-    flex: 1 1 auto;
+
+    color: #e8e2e2;
     padding: 1.25rem;
 }
 .row {
@@ -46,8 +40,8 @@
     padding-inline-end: 0.25rem;
     border-radius: 0.125rem;
     font-weight: bold;
-    background: #22c03c4d;
-    color: #28a26a ;
+    background: #F2CD5C;
+    color: #243763 ;
 }
 .col {
     max-width: 100%;
@@ -59,9 +53,17 @@
 .text-center {
     text-align: center !important;
 }
-.border-start {
-    border-color: #eae8f1 !important;
-    border-left: 1px solid #dee2e6!important;
+.score-bg {
+    background-color: #151b24;
+    margin-bottom: 8px;
+    flex: 1;
+    padding-top:12px;
+}
+.mg-right{
+    margin-right: 8px;
+}
+{
+
 }
 .tx-12 {
     font-size: 12px;
