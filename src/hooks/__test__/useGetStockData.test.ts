@@ -27,8 +27,8 @@ describe('useGetStockData', () => {
     await act(async () => {
       expect(result.current).toEqual({
         data: [],
-        error: false,
-        loading: true,
+        hasError: false,
+        isLoading: true,
         nextLink: null,
         previousLink: null,
       });
@@ -36,8 +36,8 @@ describe('useGetStockData', () => {
     });
     expect(result.current).toEqual({
       data: mockResponse.data,
-      error: false,
-      loading: false,
+      hasError: false,
+      isLoading: false,
       nextLink: '?page=2',
       previousLink: null,
     });
