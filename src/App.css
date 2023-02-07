@@ -7,3 +7,8 @@
   margin: 5px;
   font-size: 15px;
 }
+.error-message{
+  font-size: 2rem;
+  color: #e8e2e2;
+  text-align: center;
+}

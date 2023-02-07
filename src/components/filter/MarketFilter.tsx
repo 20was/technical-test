@@ -1,7 +1,7 @@
-import { MARKETS } from '@models/Markets';
 import Select, { components } from 'react-select';
 import './styles/filter.css';
 import React from 'react';
+import { MARKETS } from '../../models/Markets';
 
 interface Props {
   selectedMarketValue: string;

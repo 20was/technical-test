@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import StockCard from '../StockCard';
-import { stocksMock } from '@mocks/stocks';
+import { stocksMock } from '../../../mocks/stocks';
 
 describe('StockCard', () => {
   it('renders the stock name and unique symbol', () => {

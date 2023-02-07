@@ -1,6 +1,6 @@
 import Select, { components, SingleValue } from 'react-select';
-import { SORTING_OPTIONS, SortingTypes } from '@models/SortingTypes';
 import React from 'react';
+import { SORTING_OPTIONS, SortingTypes } from '../../models/SortingTypes';
 
 interface Props {
   selectedSortingValue: SingleValue<SortingTypes>;

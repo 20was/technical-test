@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { SORTING_OPTIONS } from '@models/SortingTypes';
 import SortingFilter from '../SortingFilter';
+import { SORTING_OPTIONS } from '../../../models/SortingTypes';
 
 describe('SortingFilter', () => {
   const selectedSortingValue = SORTING_OPTIONS[0];

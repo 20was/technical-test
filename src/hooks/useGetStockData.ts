@@ -18,8 +18,8 @@ const useGetStockData = (
   query: URLSearchQueryParams
 ) => {
   const [data, setData] = useState<Stock[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [hasError, setHasError] = useState<boolean>(false);
 
   const [currentPage] = useState<number>(Number(query.get(QUERY_PARAMS.page)) || DEFAULT_PAGE_NUMBER);
   const [previousLink, setPreviousLink] = useState<URLPageLink>(null);
@@ -67,24 +67,24 @@ const useGetStockData = (
   }, [currentPage, selectedMarket, selectedSorting]);
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
     fetchStockData()
       .then((response) => response.json())
       .then((data) => {
         setData(data?.data);
         handlePagination(data?.meta);
-        setLoading(false);
+        setIsLoading(false);
       })
       .catch((error) => {
-        setError(error);
-        setLoading(false);
+        setHasError(true);
+        setIsLoading(false);
       });
-  }, [fetchStockData, setData, setLoading, setError, handlePagination, selectedMarket, selectedSorting]);
+  }, [fetchStockData, setData, setIsLoading, setHasError, handlePagination, selectedMarket, selectedSorting]);
 
   return {
     data,
-    loading,
-    error,
+    isLoading,
+    hasError,
     previousLink,
     nextLink,
   };

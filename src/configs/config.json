@@ -1,0 +1,8 @@
+{
+  "noDataMessage": "No data found for the selected criteria",
+  "apiErrorMessage": "API returned an error. Please give it a try after few minutes.",
+  "pagination": {
+    "nextButtonText": "Next",
+    "previousButtonText": "Previous"
+  }
+}

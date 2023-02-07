@@ -7,13 +7,7 @@
     "esModuleInterop": true,
     "downlevelIteration": true,
     "moduleResolution": "node",
-    "paths": {
-      "@components/*": ["components/*"],
-      "@hooks/*": ["hooks/*"],
-      "@models/*": ["models/*"],
-      "@constants/*": ["constants/*"],
-      "@mocks/*": ["mocks/*"],
-      "@styles/*": ["styles/*"]
-    }
-  }
+    "resolveJsonModule": true
+  },
+  "include": ["src"]
 }

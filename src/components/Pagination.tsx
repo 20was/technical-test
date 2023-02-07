@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import { URLPageLink } from '@hooks/useGetStockData';
 import './styles/pagination.css';
+import { URLPageLink } from '../hooks/useGetStockData';
+import config from '../configs/config.json'
 
 interface Props {
   previousLink: URLPageLink;
@@ -11,11 +12,10 @@ const Pagination: FC<Props> = ({ previousLink, nextLink }): JSX.Element => {
   return (
     <div className="pagination-wrapper">
       <a href={previousLink || ''} className={'pagination-button ' + (!previousLink ? 'disabled-button' : '')}>
-        Previous
+        {config.pagination.previousButtonText}
       </a>
       <a href={nextLink || ''} className={'pagination-button ' + (!nextLink ? 'disabled-button' : '')}>
-        {' '}
-        Next
+        {config.pagination.nextButtonText}
       </a>
     </div>
   );
